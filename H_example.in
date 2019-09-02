@@ -1,0 +1,27 @@
+&control
+    calculation='scf'
+    verbosity='low'
+    pseudo_dir = '/qe-6.3/pseudo/',
+    outdir='.'
+    prefix='H'
+
+ /
+ &system
+    ibrav = 1, celldm(1) =7.50, nat= 1, ntyp= 1,
+    ecutwfc = 50.0,ecutrho = 250.0,
+    occupations='smearing', smearing='marzari-vanderbilt', degauss=0.05,
+    report=1,
+ /
+ &electrons
+    mixing_beta = 0.2,
+    startingwfc ='atomic'
+ /
+ &ions
+ /
+ATOMIC_SPECIES
+ H 1.0 H.pz-kjpaw_psl.1.0.0.UPF
+ATOMIC_POSITIONS
+ H 0.50 0.50 0.50
+K_POINTS
+ 1
+   0.0 0.0 0.0 1.00
